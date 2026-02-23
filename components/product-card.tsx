@@ -4,6 +4,7 @@ import { Product } from '@/lib/types';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { formatPrice } from '@/lib/utils';
 
 interface ProductCardProps {
     product: Product;
@@ -11,8 +12,8 @@ interface ProductCardProps {
 
 export function ProductCard({ product }: ProductCardProps) {
     return (
-        <Link href={`/productos/${product.id}`}>
-            <Card className="group overflow-hidden transition-all hover:shadow-lg">
+        <Link href={`/productos/${product.id}`} className="h-full block">
+            <Card className="h-full flex flex-col group overflow-hidden transition-all hover:shadow-lg">
                 <CardHeader className="p-0">
                     <div className="relative aspect-square overflow-hidden bg-gray-100">
                         <Image
@@ -34,14 +35,16 @@ export function ProductCard({ product }: ProductCardProps) {
                         )}
                     </div>
                 </CardHeader>
-                <CardContent className="p-4">
-                    <h3 className="font-semibold text-lg mb-2 line-clamp-1">
-                        {product.name}
-                    </h3>
-                    <p className="text-sm text-gray-600 mb-3 line-clamp-2">
-                        {product.description}
-                    </p>
-                    <div className="flex items-center gap-2 flex-wrap">
+                <CardContent className="p-4 flex-1 flex flex-col">
+                    <div className="flex-1">
+                        <h3 className="font-semibold text-lg mb-2 line-clamp-1">
+                            {product.name}
+                        </h3>
+                        <p className="text-sm text-gray-600 mb-3 line-clamp-2">
+                            {product.description}
+                        </p>
+                    </div>
+                    <div className="flex items-center gap-2 flex-wrap mt-auto">
                         {product.colors && product.colors.length > 0 && (
                             <span className="text-xs text-gray-500">
                                 {product.colors.length} {product.colors.length === 1 ? 'color' : 'colores'}
@@ -57,7 +60,7 @@ export function ProductCard({ product }: ProductCardProps) {
                 <CardFooter className="p-4 pt-0 flex items-center justify-between">
                     <div>
                         <p className="text-2xl font-bold text-primary">
-                            ${product.price}
+                            {formatPrice(product.price)}
                         </p>
                     </div>
                     <Button size="sm" className="group-hover:bg-primary/90">

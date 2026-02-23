@@ -72,7 +72,7 @@ export const products: Product[] = [
         id: '1',
         name: 'Zapatillas Deportivas Premium',
         description: 'Zapatillas deportivas de alta calidad con tecnología de amortiguación avanzada. Perfectas para running y uso casual.',
-        price: 89.99,
+        price: 170000,
         category: 'zapatos',
         images: [
             'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80',
@@ -87,7 +87,7 @@ export const products: Product[] = [
         id: '3',
         name: 'Zapatillas Urbanas',
         description: 'Zapatillas casuales perfectas para el día a día. Comodidad y estilo en cada paso.',
-        price: 69.99,
+        price: 170000,
         category: 'zapatos',
         images: [
             'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&q=80'
@@ -170,7 +170,7 @@ export const products: Product[] = [
         id: '6',
         name: 'Camisa Formal Blanca',
         description: 'Camisa de vestir blanca en algodón premium. Esencial en todo guardarropa profesional.',
-        price: 49.99,
+        price: 45000,
         category: 'camisas',
         images: [
             'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=800&q=80'
@@ -184,7 +184,7 @@ export const products: Product[] = [
         id: '7',
         name: 'Camisa a Rayas',
         description: 'Camisa casual con rayas verticales. Perfecta para el trabajo o eventos casuales.',
-        price: 44.99,
+        price: 45000,
         category: 'camisas',
         images: [
             'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=80'
@@ -199,7 +199,7 @@ export const products: Product[] = [
         id: '8',
         name: 'Jeans Slim Fit',
         description: 'Jeans de corte slim fit en mezclilla premium. Comodidad y estilo garantizados.',
-        price: 59.99,
+        price: 59000,
         category: 'jeans',
         images: [
             'https://images.unsplash.com/photo-1542272604-787c3835535d?w=800&q=80'
@@ -228,7 +228,7 @@ export const products: Product[] = [
         id: '10',
         name: 'Pantalón de Vestir',
         description: 'Pantalón formal de corte recto. Perfecto para el ambiente de oficina.',
-        price: 64.99,
+        price: 60000,
         category: 'pantalones',
         images: [
             'https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=800&q=80'
@@ -241,7 +241,7 @@ export const products: Product[] = [
         id: '11',
         name: 'Pantalón Chino',
         description: 'Pantalón chino casual-formal. Versátil para múltiples ocasiones.',
-        price: 54.99,
+        price: 50000,
         category: 'pantalones',
         images: [
             'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=800&q=80'

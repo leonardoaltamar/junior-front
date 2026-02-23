@@ -9,7 +9,8 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { ProductCard } from '@/components/product-card';
 import { getProductById, getRelatedProducts } from '@/lib/data';
-import { ArrowLeft, ShoppingCart, Heart } from 'lucide-react';
+import { formatPrice } from '@/lib/utils';
+import { ArrowLeft, MessageCircle, Heart } from 'lucide-react';
 
 interface ProductPageProps {
     params: Promise<{
@@ -98,7 +99,7 @@ export default function ProductPage({ params }: ProductPageProps) {
                     </div>
 
                     <div className="text-4xl font-bold text-primary">
-                        ${product.price}
+                        {formatPrice(product.price)}
                     </div>
 
                     {/* Size Selection */}
@@ -158,11 +159,15 @@ export default function ProductPage({ params }: ProductPageProps) {
                     <div className="flex gap-4">
                         <Button
                             size="lg"
-                            className="flex-1"
+                            className="flex-1 bg-[#25D366] hover:bg-[#20ba5a] text-white transition-colors"
                             disabled={!product.inStock}
+                            onClick={() => {
+                                const message = encodeURIComponent(`Hola, me interesa este producto: ${product.name}`);
+                                window.open(`https://wa.me/573014162947?text=${message}`, '_blank');
+                            }}
                         >
-                            <ShoppingCart className="mr-2 h-5 w-5" />
-                            Agregar al Carrito
+                            <MessageCircle className="mr-2 h-5 w-5" />
+                            Solicitar este producto
                         </Button>
                         <Button
                             size="lg"

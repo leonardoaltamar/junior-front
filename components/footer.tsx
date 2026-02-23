@@ -87,8 +87,8 @@ export function Footer() {
                         <h3 className="font-semibold mb-4">Contacto</h3>
                         <ul className="space-y-2 text-sm text-gray-600">
                             <li>Email: info@juniorstore.com</li>
-                            <li>Teléfono: +1 234 567 890</li>
-                            <li>WhatsApp: +1 234 567 890</li>
+                            <li>Teléfono: +57 301 4162947</li>
+                            <li>WhatsApp: +57 301 4162947</li>
                             <li>Horario: Lun - Sáb, 9:00 - 18:00</li>
                         </ul>
                     </div>
