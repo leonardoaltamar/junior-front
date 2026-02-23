@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { ProductCard } from '@/components/product-card';
-import { getProductById, getProductsByCategory } from '@/lib/data';
+import { getProductById, getRelatedProducts } from '@/lib/data';
 import { ArrowLeft, ShoppingCart, Heart } from 'lucide-react';
 
 interface ProductPageProps {
@@ -30,9 +30,7 @@ export default function ProductPage({ params }: ProductPageProps) {
         notFound();
     }
 
-    const relatedProducts = getProductsByCategory(product.category)
-        .filter(p => p.id !== product.id)
-        .slice(0, 4);
+    const relatedProducts = getRelatedProducts(product);
 
     return (
         <div className="container mx-auto px-4 py-8">
@@ -100,7 +98,7 @@ export default function ProductPage({ params }: ProductPageProps) {
                     </div>
 
                     <div className="text-4xl font-bold text-primary">
-                        ${product.price.toFixed(2)}
+                        ${product.price}
                     </div>
 
                     {/* Size Selection */}
@@ -132,10 +130,21 @@ export default function ProductPage({ params }: ProductPageProps) {
                                 {product.colors.map((color) => (
                                     <button
                                         key={color}
-                                        onClick={() => setSelectedColor(color)}
+                                        onClick={() => {
+                                            setSelectedColor(color);
+                                            // Si el color tiene una imagen asociada, la mostramos
+                                            if (product.colorImages?.[color]) {
+                                                const imageIndex = product.images.findIndex(
+                                                    (img) => img === product.colorImages?.[color]
+                                                );
+                                                if (imageIndex !== -1) {
+                                                    setSelectedImage(imageIndex);
+                                                }
+                                            }
+                                        }}
                                         className={`px-4 py-2 border-2 rounded-md transition-all ${selectedColor === color
-                                                ? 'border-primary bg-primary text-white'
-                                                : 'border-gray-200 hover:border-gray-300'
+                                            ? 'border-primary bg-primary text-white'
+                                            : 'border-gray-200 hover:border-gray-300'
                                             }`}
                                     >
                                         {color}

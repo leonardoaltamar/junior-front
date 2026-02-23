@@ -6,7 +6,8 @@ export type ProductCategory =
   | 'camisas-basicas'
   | 'camisas-estampadas'
   | 'gorras'
-  | 'relojes';
+  | 'relojes'
+  | 'bermudas';
 
 export interface Product {
   id: string;
@@ -17,6 +18,7 @@ export interface Product {
   images: string[];
   sizes?: string[];
   colors?: string[];
+  colorImages?: Record<string, string>;
   inStock: boolean;
   featured?: boolean;
 }

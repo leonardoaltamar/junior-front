@@ -58,5 +58,6 @@ export async function generateStaticParams() {
         { categoria: 'camisas-estampadas' },
         { categoria: 'gorras' },
         { categoria: 'relojes' },
+        { categoria: 'bermudas' },
     ];
 }
